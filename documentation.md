@@ -17,3 +17,21 @@ File neeed:
 kubectl create -f rbac-config.yaml
 helm init --service-account tiller --history-max 200
 ```
+## Install 
+
+## Install Kibana
+Set service.type=LoadBalancer to expose to outside of the cluster.
+```
+helm install --name kibana elastic/kibana --set service.type=LoadBalancer
+```
+
+## Install Auditbit
+
+```
+docker run \
+  --cap-add="AUDIT_CONTROL" \
+  --cap-add="AUDIT_READ" \
+  docker.elastic.co/beats/auditbeat:7.3.1 \
+  setup -E setup.kibana.host=10.12.10.64:5601 \
+  -E output.elasticsearch.hosts=["10.12.0.35:9200"]
+```

@@ -10,10 +10,10 @@ spec:
      - name: setup.kibana.host
        value: "10.12.2.250:5601"
      - name: output.elasticsearch.hosts
-       value: "10.12.0.35:9200"
+       value: "["10.12.0.35:9200"]"
      securityContext:
+       runAsUser: 0
        capabilities:
          add:
            - AUDIT_CONTROL
            - AUDIT_READ
-           
