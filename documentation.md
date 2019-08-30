@@ -17,10 +17,17 @@ File neeed:
 kubectl create -f rbac-config.yaml
 helm init --service-account tiller --history-max 200
 ```
-## Install 
+## Install Elasticsearch
+
+Install through helm.
+```
+helm repo add elastic https://helm.elastic.co
+helm install --name elasticsearch elastic/elasticsearch
+```
+
 
 ## Install Kibana
-Set service.type=LoadBalancer to expose to outside of the cluster.
+Intall through helm, also set service type to `LoadBalancer` in oder to expose to outside of the cluster.
 ```
 helm install --name kibana elastic/kibana --set service.type=LoadBalancer
 ```
