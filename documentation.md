@@ -30,16 +30,16 @@ helm install --name kibana elastic/kibana --set service.type=LoadBalancer
 ```
 
 ## Install Auditbeat
+Install through helm, do the following settings:
 
-File needed:
-+ auditbeat/auditbeat-kubernetes.yaml
++ Enable dashboard
++ Set host of Kibana service
++ Disable output as file
++ Set the output to the Elasticsearch service need to be modified to the allocated <service_name:port>
 
-In which, the host and port of Kibana in `ConfigMap` need to be modified to the allocated `CLUSTER-IP` and `PORT`.
-
-Also the environment variable in the container that related to the host and port of Elasticsearch need to be modified to the allocated `CLUSTER-IP` and `PORT`. 
 
 ```
-kubectl create -f auditbeat-kubernetes.yaml
+helm install --name my-release --set config.setup.dashboards.enabled=true --set config.setup.kibana.host="kibana-kibana:5601" --set config.output.file.enabled=false --set config.output.elasticsearch.hosts="elasticsearch-master" stable/auditbeat 
 ```
 
 ## Finish
