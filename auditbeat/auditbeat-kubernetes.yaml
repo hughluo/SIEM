@@ -21,8 +21,8 @@ data:
     cloud.auth: ${ELASTIC_CLOUD_AUTH}
       
     setup.kibana:
-      host: "mykibanahost:5601" 
-      
+      host: "10.70.10.223:5601" 
+
     output.elasticsearch:
       hosts: ['${ELASTICSEARCH_HOST:elasticsearch}:${ELASTICSEARCH_PORT:9200}']
       username: ${ELASTICSEARCH_USERNAME}
@@ -80,7 +80,7 @@ spec:
         ]
         env:
         - name: ELASTICSEARCH_HOST
-          value: "10.12.0.35"
+          value: "10.70.10.207"
         - name: ELASTICSEARCH_PORT
           value: "9200"
         - name: ELASTICSEARCH_USERNAME

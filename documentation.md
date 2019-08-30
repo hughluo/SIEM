@@ -11,7 +11,7 @@ chmod 700 get_helm.sh
 ```
 
 ## Init Helm & Add Tiller service account
-File neeed:
+File needed:
 + k8s/helm/rbac-config.yaml
 ```
 kubectl create -f rbac-config.yaml
@@ -33,12 +33,3 @@ helm install --name kibana elastic/kibana --set service.type=LoadBalancer
 ```
 
 ## Install Auditbit
-
-```
-docker run \
-  --cap-add="AUDIT_CONTROL" \
-  --cap-add="AUDIT_READ" \
-  docker.elastic.co/beats/auditbeat:7.3.1 \
-  setup -E setup.kibana.host=10.12.10.64:5601 \
-  -E output.elasticsearch.hosts=["10.12.0.35:9200"]
-```
