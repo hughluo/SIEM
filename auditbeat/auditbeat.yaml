@@ -5,7 +5,7 @@ metadata:
 spec:
  containers:
    - name: auditbeat
-     image: docker.elastic.co/beats/auditbeat:7.3.14
+     image: docker.elastic.co/beats/auditbeat:7.3.1
      env:
      - name: setup.kibana.host
        value: "10.12.2.250:5601"
