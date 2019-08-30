@@ -1,4 +1,4 @@
-#SIEM on GKE
+# SIEM on GKE
 
 ## Install Helm
 ```
