@@ -35,7 +35,7 @@ Install through helm, do the following settings:
 + Enable dashboard
 + Set host of Kibana service
 + Disable output as file
-+ Set the output to the Elasticsearch service need to be modified to the allocated <service_name:port>
++ Set the host of Elasticsearch service as output
 
 
 ```
