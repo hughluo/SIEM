@@ -21,6 +21,7 @@ data:
     cloud.auth: ${ELASTIC_CLOUD_AUTH}
       
     setup.kibana:
+      # Modify this to match the allocated host
       host: "10.70.10.223:5601" 
 
     output.elasticsearch:
@@ -79,6 +80,7 @@ spec:
           "-c", "/etc/auditbeat.yml"
         ]
         env:
+        # Modify this to match the allocated host
         - name: ELASTICSEARCH_HOST
           value: "10.70.10.207"
         - name: ELASTICSEARCH_PORT

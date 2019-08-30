@@ -33,3 +33,16 @@ helm install --name kibana elastic/kibana --set service.type=LoadBalancer
 ```
 
 ## Install Auditbit
+
+File needed:
++ auditbeat/auditbeat-kubernetes.yaml
+
+In which, the host and port of Kibana in ConfigMap need to be modified to the allocated clusterIP and port.
+
+Also the environment variable in the container that related to the host and port of Elasticsearch need to be modified to the allocated clusterIP and port. 
+
+```
+kubectl create -f auditbeat-kubernetes.yaml
+```
+
+
