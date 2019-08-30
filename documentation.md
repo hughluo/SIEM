@@ -1,4 +1,4 @@
-# SIEM on Go
+# SIEM
 
 ## Install Helm
 ```
