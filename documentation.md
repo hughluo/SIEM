@@ -1,7 +1,4 @@
-# This is doc for SIEM on GKE
-
-## Pre
-
+#SIEM on GKE
 
 ## Install Helm
 ```
@@ -27,12 +24,12 @@ helm install --name elasticsearch elastic/elasticsearch
 
 
 ## Install Kibana
-Intall through helm, also set service type to `LoadBalancer` in oder to expose to outside of the cluster.
+Install through helm, also set service type to `LoadBalancer` in oder to expose to outside of the cluster.
 ```
 helm install --name kibana elastic/kibana --set service.type=LoadBalancer
 ```
 
-## Install Auditbit
+## Install Auditbeat
 
 File needed:
 + auditbeat/auditbeat-kubernetes.yaml
@@ -45,4 +42,6 @@ Also the environment variable in the container that related to the host and port
 kubectl create -f auditbeat-kubernetes.yaml
 ```
 
+## Finish
+Now we can go visit the externalIP of Kibana to check whether it works.
 
