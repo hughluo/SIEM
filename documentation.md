@@ -1,4 +1,4 @@
-# SIEM on GKE
+# SIEM on Go
 
 ## Install Helm
 ```
@@ -34,14 +34,14 @@ helm install --name kibana elastic/kibana --set service.type=LoadBalancer
 File needed:
 + auditbeat/auditbeat-kubernetes.yaml
 
-In which, the host and port of Kibana in ConfigMap need to be modified to the allocated clusterIP and port.
+In which, the host and port of Kibana in `ConfigMap` need to be modified to the allocated `CLUSTER-IP` and `PORT`.
 
-Also the environment variable in the container that related to the host and port of Elasticsearch need to be modified to the allocated clusterIP and port. 
+Also the environment variable in the container that related to the host and port of Elasticsearch need to be modified to the allocated `CLUSTER-IP` and `PORT`. 
 
 ```
 kubectl create -f auditbeat-kubernetes.yaml
 ```
 
 ## Finish
-Now we can go visit the externalIP of Kibana to check whether it works.
+Now we can go visit the `EXTERNAL-IP` of Kibana to check whether it works.
 
