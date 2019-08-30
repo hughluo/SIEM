@@ -39,7 +39,7 @@ Install through helm, do the following settings:
 
 
 ```
-helm install --name my-release --set config.setup.dashboards.enabled=true --set config.setup.kibana.host="kibana-kibana:5601" --set config.output.file.enabled=false --set config.output.elasticsearch.hosts="elasticsearch-master" stable/auditbeat 
+helm install --name auditbeat --set config.setup.dashboards.enabled=true --set config.setup.kibana.host="kibana-kibana:5601" --set config.output.file.enabled=false --set config.output.elasticsearch.hosts="elasticsearch-master" stable/auditbeat 
 ```
 
 ## Finish
