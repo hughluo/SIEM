@@ -16,3 +16,4 @@ spec:
          add:
            - AUDIT_CONTROL
            - AUDIT_READ
+           
