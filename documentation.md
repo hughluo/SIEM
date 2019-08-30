@@ -43,5 +43,5 @@ helm install --name auditbeat --set config.setup.dashboards.enabled=true --set c
 ```
 
 ## Finish
-Now we can go visit the `EXTERNAL-IP` of Kibana to check whether it works.
+Now we can go visiting the `EXTERNAL-IP` of Kibana to check whether it works.
 
